@@ -1,0 +1,1 @@
+web: gunicorn web_build_genshin:app

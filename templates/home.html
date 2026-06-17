@@ -1,0 +1,205 @@
+<link
+href="https://fonts.googleapis.com/css2?family=Forum&family=IM+Fell+English+SC&display=swap"
+rel="stylesheet">
+
+<body
+style="
+background-image:url('/static/genshin.image/cover.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+font-family:'Forum', serif;
+">
+
+<div
+style="
+background:rgba(255,255,255,0.65);
+min-height:100vh;
+">
+
+<h1
+style="
+font-family:'IM Fell English SC', serif;
+font-size:50px;
+text-align:center;
+color:#c89b3c;
+margin-top:100px;
+margin-bottom:0px;
+text-shadow:0px 0px 10px white; {#genshinstyle,kind of blingbling(#}
+">
+Genshin Character Search
+</h1>
+
+
+<p
+style="
+font-family:'Forum', serif;
+font-size:25px;
+text-align:center;
+color: #c89b3c;
+margin-top:20px;
+margin-bottom:40px;
+letter-spacing:1px;
+text-shadow:0px 0px 10px white;
+">
+Song of the Welkin Moon
+</p>
+
+
+<form
+action="/genshin"
+method="GET"
+style="
+text-align:center;
+">
+
+<input
+id="search-box"
+
+style="
+font-family:'Forum', serif;
+width:300px;
+padding:10px;
+font-size:18px;
+border-radius:10px;
+border:1px solid gray;
+"
+
+type="text"
+name="character_name"
+placeholder="Enter character name">
+
+<button 
+style="
+font-family:'Forum', serif;
+padding:10px 20px;
+font-size:18px;
+background-color:#c89b3c;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+"
+type="submit">
+Search
+</button>
+
+<div
+id="suggestions"
+style="
+width:400px;
+margin:auto;
+background:white;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+overflow:hidden;
+">
+</div>
+
+</form>
+
+<h2
+style="
+font-family:'Forum', serif;
+text-align:center;
+margin-top:50px;
+color:#444;
+font-size:25px;
+font-weight:normal;
+">
+Popular Characters
+</h2>
+
+<div
+style="
+width:520px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+">
+
+{% for character in popular_characters %}
+<a
+href="/genshin?character_name={{ character.name }}"
+style="
+font-family:'Forum', serif;
+font-size:18px;
+display:inline-block;
+width:120px;
+padding:10px;
+background:{{ character.color }};
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+text-align:center;
+">
+{{ character.name }}
+</a>
+{% endfor %}
+
+</div>
+
+</div>
+
+
+<script>
+const box = document.getElementById("search-box")
+const suggestions = document.getElementById("suggestions")
+
+box.addEventListener(
+    "input",
+    async function(){
+        let text = box.value
+
+        if(text.length < 1){
+            suggestions.innerHTML = ""
+            return
+        }
+
+        let response =
+        await fetch(
+            "/suggest?q=" + text
+        )
+
+        let names =
+        await response.json()
+
+        let html = ""
+
+        for(let name of names){
+            html += `
+            <a
+            href="/genshin?character_name=${name}"
+            style="
+            font-family:'Forum', serif;
+            display:block;
+            padding:10px;
+            padding-left:15px;
+            text-align:left;
+            text-decoration:none;
+            color:#2d2039;
+            font-size:18px;
+            border-bottom:1px solid #eee;
+            transition:0.2s;
+            "
+            onmouseover="
+            this.style.background='#f8f0d7'"
+            onmouseout="
+            this.style.background='white'"
+            >
+            ${name}
+            </a>
+            `
+        }
+        suggestions.innerHTML = html
+    }
+)
+</script>
+
+
+
+</body>

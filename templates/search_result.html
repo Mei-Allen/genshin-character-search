@@ -1,0 +1,71 @@
+<link
+href="https://fonts.googleapis.com/css2?family=Forum&family=IM+Fell+English+SC&display=swap"
+rel="stylesheet">
+
+<body style="background-color:#f5f5f5;">
+<div
+style="
+width:800px;
+margin:auto;
+padding:20px;
+
+background:
+radial-gradient(
+circle at top center,
+white,
+{{ color }}
+);
+border-radius:20px;
+
+box-shadow:0px 0px 15px lightgray;
+">
+
+
+<img src="/static/genshin.image/{{ row['character_name'] }}.png"
+style="
+width:250px;
+display:block;
+margin:auto;"
+>
+
+
+<h1
+style="
+font-family:'IM Fell English SC', serif;
+color: #2d2039;
+text-align:center;
+">
+{{ row['character_name'] }}
+</h1>
+
+<div
+style="
+font-family:'Forum', serif;
+margin:8px 0;
+font-size:19px;
+line-height:1.1;
+">
+<p>Affiliation: {{ row['affiliation'] }}</p>
+<p>Star Rarity: {{ row['star_rarity'] }}</p>
+<p>Region: {{ row['region'] }}</p>
+<p>Vision: {{ row['vision'] }}</p>
+<p>Weapon Type: {{ row['weapon_type'] }}</p>
+</div>
+
+<a
+href="/genshin/{{ row['character_name'] }}"
+style="
+display:inline-block;
+margin-top:5px;
+padding:3px 6px;
+background: {{ dark_color }};
+color:white;
+text-decoration:none;
+border-radius:3px;
+">
+View Details →
+</a>
+
+
+</div>
+</body>
