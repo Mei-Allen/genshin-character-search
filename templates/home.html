@@ -1,6 +1,9 @@
 <link
 href="https://fonts.googleapis.com/css2?family=Forum&family=IM+Fell+English+SC&display=swap"
 rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Forum&family=IM+Fell+English+SC&family=Philosopher:ital,wght@1,700&display=swap"
+rel="stylesheet">
 
 <body
 style="
@@ -13,20 +16,4087 @@ font-family:'Forum', serif;
 ">
 
 <div
+id="world-layer"
+
 style="
-background:rgba(255,255,255,0.65);
+background:rgba(255,255,255,0.8);
 min-height:100vh;
+transition:none;
 ">
+
+
+
+
+
+
+{#序章【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【#}
+<section class="prologue">
+
+<video
+class="prologue-video"
+autoplay
+muted
+loop
+playsinline>
+<source
+src="/static/genshin.image/cover.mp4"
+type="video/mp4">
+</video>
+<div class="prologue-overlay"></div>
+<div class="prologue-content">
+<p class="prologue-quote">
+Everything you've experienced
+has left its impression on you.
+<br><br>
+And that's what makes
+you who you are today.
+</p>
+<p class="prologue-author">
+— Traveler's Journey
+</p>
+<div class="scroll-down">
+Begin the Journey
+<br>
+↓
+</div>
+</div>
+</section>
+
+
+
+
+<style>
+.prologue{
+
+position:relative;
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+}
+
+.prologue-video{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+}
+
+.prologue-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.25),
+rgba(0,0,0,.55)
+);
+
+backdrop-filter:
+blur(1px);
+}
+
+.prologue-content{
+
+position:relative;
+
+z-index:5;
+
+color:white;
+
+max-width:1000px;
+
+padding:40px;
+
+animation:
+fadeIn 2.5s ease;
+}
+
+.prologue-quote{
+
+font-family:'Philosopher', serif;
+
+font-size:58px;
+
+line-height:1.5;
+
+text-shadow:
+0 0 20px rgba(255,255,255,.2);
+}
+
+.prologue-author{
+
+margin-top:50px;
+
+font-size:24px;
+
+opacity:.8;
+
+letter-spacing:3px;
+}
+
+.scroll-down{
+
+margin-top:120px;
+
+font-size:22px;
+
+opacity:.75;
+
+animation:
+floatArrow 2.5s ease-in-out infinite;
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+@keyframes floatArrow{
+
+0%,100%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(12px);
+
+}
+
+}
+</style>
+{#序章结束【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【#}
+
+
+
+
+
+
+
+
+
+{#venty{[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]#}
+<div class="chapter anemo">
+
+<div class="anemo-shape"></div>
+
+<div class="anemo-mist"></div>
+
+<div class="chapter-bg-symbol">
+<img
+src="/static/genshin.image/Element_Anemo.webp">
+</div>
+
+<div class="chapter-text">
+
+<div class="chapter-number">
+Chapter I
+</div>
+
+<div class="chapter-title">
+Freedom
+</div>
+
+<div class="chapter-line">
+The winds remember every traveler.
+</div>
+
+<div class="chapter-description">
+
+In Mondstadt, freedom is not a gift.
+
+It is a choice.
+
+A choice carried by every breeze,
+every song,
+and every wandering soul.
+
+</div>
+
+</div>
+
+<div class="wind-line wind1"></div>
+<div class="wind-line wind2"></div>
+<div class="wind-line wind3"></div>
+
+<img
+src="/static/genshin.image/Venti.png"
+class="chapter-character">
+
+</div>
+
+<style>
+.chapter{
+
+height:110vh;
+
+position:relative;
+
+overflow:hidden;
+
+background:transparent;
+
+mask-image:
+
+linear-gradient(
+
+to bottom,
+
+black 0%,
+
+black 75%,
+
+rgba(0,0,0,.8) 85%,
+
+rgba(0,0,0,.4) 92%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+
+linear-gradient(
+
+to bottom,
+
+black 0%,
+
+black 75%,
+
+rgba(0,0,0,.8) 85%,
+
+rgba(0,0,0,.4) 92%,
+
+transparent 100%
+
+);
+
+}
+
+
+
+
+
+
+.anemo-shape{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+ellipse 140% 120%
+
+at 80% 35%,
+
+rgba(116,217,170,.95) 0%,
+
+rgba(116,217,170,.75) 25%,
+
+rgba(116,217,170,.45) 50%,
+
+rgba(116,217,170,.18) 70%,
+
+rgba(116,217,170,.05) 85%,
+
+transparent 100%
+
+);
+
+z-index:0;
+}
+
+@keyframes anemoBreath{
+
+0%,100%{
+
+transform:
+scale(1);
+
+opacity:.9;
+}
+
+50%{
+
+transform:
+scale(1.08);
+
+opacity:1;
+}
+}
+
+
+
+.anemo-mist{
+
+position:absolute;
+
+right:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(
+circle at 70% 30%,
+rgba(255,255,255,.20),
+transparent 25%
+),
+
+radial-gradient(
+circle at 80% 60%,
+rgba(255,255,255,.15),
+transparent 20%
+),
+
+radial-gradient(
+circle at 65% 80%,
+rgba(255,255,255,.12),
+transparent 18%
+);
+
+filter:blur(60px);
+
+animation:
+windFlow 8s ease-in-out infinite;
+
+z-index:1;
+}
+
+
+@keyframes windFlow{
+
+0%,100%{
+transform:
+translateX(0px);
+}
+
+50%{
+transform:
+translateX(-30px);
+}
+
+}
+
+
+
+.chapter-bg-symbol{
+
+position:absolute;
+
+left:100px;
+top:25%;
+
+transform:
+translateY(-50%);
+
+opacity:.4;
+
+z-index:1;
+}
+
+.chapter-bg-symbol img{
+
+width:150px;
+
+animation:
+windRotate 80s linear infinite;
+}
+
+
+.chapter-text{
+
+position:absolute;
+
+left:10%;
+top:18%;
+
+max-width:650px;
+
+z-index:5;
+
+opacity:0;
+
+transform:
+
+translateX(-80px)
+
+translateY(20px);
+
+transition:1.8s;
+}
+
+.chapter.show .chapter-text{
+
+opacity:1;
+
+transform:
+translateY(0);
+}
+
+
+.chapter-number{
+
+font-family:'Forum',serif;
+
+font-size:24px;
+
+letter-spacing:8px;
+
+color:white;
+
+margin-bottom:30px;
+}
+
+
+.chapter-title{
+
+font-family:'Philosopher',serif;
+
+font-size:120px;
+
+font-weight:700;
+
+font-style:italic;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:
+0 0 25px rgba(255,255,255,.3);
+}
+
+
+.chapter-line{
+
+font-family:'Forum',serif;
+
+font-size:38px;
+
+color:white;
+
+margin-bottom:50px;
+
+opacity:.95;
+}
+
+
+.chapter-description{
+
+font-family:'Forum',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:white;
+
+opacity:.75;
+}
+
+
+.chapter-character{
+
+position:absolute;
+
+right:5%;
+bottom:0px;
+
+height:800px;
+
+opacity:0;
+
+transform:
+translateX(300px)
+
+translateY(120px)
+
+rotate(-8deg);
+
+transition:
+2.4s cubic-bezier(.22,1,.36,1);
+
+z-index:4;
+}
+
+
+.chapter.show .chapter-character{
+
+opacity:1;
+
+transform:
+translateX(0)
+translateY(0)
+rotate(0deg);
+animation:
+ventiFloat 5s ease-in-out infinite 2.4s;
+}
+
+
+@keyframes windRotate{
+
+from{
+transform:
+translateY(-50%)
+rotate(0deg);
+}
+
+to{
+transform:
+translateY(-50%)
+rotate(360deg);
+}
+}
+
+@keyframes ventiFloat{
+0%,100%{
+transform:
+translateY(0px);
+}
+
+50%{
+transform:
+translateY(-18px);
+}
+}
+</style>
+
+<script>
+
+window.addEventListener('load',()=>{
+
+const panels =
+document.querySelectorAll(
+'.chapter'
+)
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show')
+
+}
+
+})
+
+},
+
+{
+threshold:0.4
+}
+
+)
+
+panels.forEach(panel=>{
+
+observer.observe(panel)
+
+})
+
+})
+
+</script>
+
+{#venty{[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]#}
+
+
+
+
+{#zhongli[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]#}
+
+<div class="chapter geo">
+
+<div class="geo-shape"></div>
+
+<div class="geo-light"></div>
+
+<div class="geo-bg-symbol">
+<img
+src="/static/genshin.image/Element_Geo.webp">
+</div>
+
+<div class="chapter-text">
+
+<div class="chapter-number">
+Chapter II
+</div>
+
+<div class="chapter-title">
+Contract
+</div>
+
+<div class="chapter-line">
+Every contract must be honored.
+</div>
+
+<div class="chapter-description">
+
+In Liyue,
+every promise bears weight.
+
+Not because it is written.
+
+But because it is remembered.
+
+Across mountains,
+across centuries,
+and across the hearts of those who keep it.
+
+</div>
+
+</div>
+
+<div class="geo-pillar pillar-left"></div>
+<div class="geo-pillar pillar-center"></div>
+<div class="geo-pillar pillar-right"></div>
+
+<img
+src="/static/genshin.image/Zhongli.png"
+class="geo-character">
+
+</div>
+
+<style>
+
+.geo{
+
+height:120vh;
+
+position:relative;
+
+overflow:hidden;
+
+background:transparent;
+
+mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+}
+
+
+
+
+.geo-shape{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+ellipse 140% 120%
+
+at 50% 35%,
+
+rgba(214,176,84,.95) 0%,
+
+rgba(214,176,84,.70) 25%,
+
+rgba(214,176,84,.42) 50%,
+
+rgba(214,176,84,.18) 70%,
+
+rgba(214,176,84,.05) 85%,
+
+transparent 100%
+
+);
+
+z-index:0;
+
+}
+
+
+
+
+.geo-light{
+
+position:absolute;
+
+width:1200px;
+
+height:1200px;
+
+left:50%;
+
+top:-250px;
+
+transform:translateX(-50%);
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,220,150,.35),
+
+transparent 70%
+
+);
+
+filter:blur(80px);
+
+animation:
+
+geoPulse 8s ease-in-out infinite;
+
+z-index:1;
+
+}
+
+
+
+
+@keyframes geoPulse{
+
+0%,100%{
+
+opacity:.7;
+
+transform:
+translateX(-50%)
+scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:
+translateX(-50%)
+scale(1.08);
+
+}
+
+}
+
+
+
+
+.geo-bg-symbol{
+
+position:absolute;
+
+left:50%;
+
+top:42%;
+
+transform:
+
+translate(-50%,-50%);
+
+opacity:.10;
+
+z-index:1;
+
+}
+
+
+
+
+.geo-bg-symbol img{
+
+width:650px;
+
+animation:
+
+geoRotate 120s linear infinite;
+
+}
+
+
+
+
+.geo-pillar{
+
+position:absolute;
+
+bottom:0;
+
+background:
+
+linear-gradient(
+
+to top,
+
+rgba(115,78,26,.95),
+
+rgba(214,176,84,.95)
+
+);
+
+box-shadow:
+
+0 0 30px rgba(255,210,120,.35);
+
+z-index:2;
+
+}
+
+
+
+
+.pillar-left{
+
+left:12%;
+
+width:90px;
+
+height:40%;
+
+}
+
+
+
+
+.pillar-center{
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:120px;
+
+height:68%;
+
+}
+
+
+
+
+.pillar-right{
+
+right:12%;
+
+width:90px;
+
+height:50%;
+
+}
+
+
+
+
+.geo .chapter-text{
+
+position:absolute;
+
+left:50%;
+
+top:12%;
+
+transform:
+
+translateX(-50%)
+translateY(80px);
+
+max-width:850px;
+
+text-align:center;
+
+z-index:5;
+
+opacity:0;
+
+transition:1.6s;
+
+}
+
+
+
+
+.geo.show .chapter-text{
+
+opacity:1;
+
+transform:
+
+translateX(-50%)
+translateY(0);
+
+}
+
+
+
+
+.geo .chapter-number{
+
+font-family:'Forum',serif;
+
+font-size:24px;
+
+letter-spacing:10px;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+
+
+
+.geo .chapter-title{
+
+font-family:'Philosopher',serif;
+
+font-size:140px;
+
+font-weight:700;
+
+font-style:italic;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 35px rgba(255,220,120,.55);
+
+}
+
+
+
+
+.geo .chapter-line{
+
+font-family:'Forum',serif;
+
+font-size:42px;
+
+color:white;
+
+margin-bottom:50px;
+
+opacity:.95;
+
+}
+
+
+
+
+.geo .chapter-description{
+
+font-family:'Forum',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:white;
+
+opacity:.85;
+
+}
+
+
+
+
+.geo-character{
+
+position:absolute;
+
+left:50%;
+
+bottom:-40px;
+
+height:980px;
+
+opacity:0;
+
+transform:
+
+translateX(-50%)
+translateY(180px);
+
+transition:
+
+2.4s cubic-bezier(.22,1,.36,1);
+
+z-index:4;
+
+filter:
+
+drop-shadow(
+0 40px 60px rgba(0,0,0,.30)
+);
+
+}
+
+
+
+
+.geo.show .geo-character{
+
+opacity:1;
+
+transform:
+
+translateX(-50%)
+translateY(0);
+
+}
+
+
+
+
+@keyframes geoRotate{
+
+from{
+
+transform:
+rotate(0deg);
+
+}
+
+to{
+
+transform:
+rotate(360deg);
+
+}
+
+}
+
+</style>
+
+{#zhongli[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]#}
+
+
+
+{#raiden[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]#}
+
+<div class="chapter electro">
+
+<div class="electro-bg"></div>
+
+<div class="electro-lightning"></div>
+
+<div class="electro-lightning lightning2"></div>
+
+<div class="electro-symbol">
+
+<img
+src="/static/genshin.image/Element_Electro.webp">
+
+</div>
+
+<div class="electro-content">
+
+<div class="electro-number">
+Chapter III
+</div>
+
+<div class="electro-title">
+Eternity
+</div>
+
+<div class="electro-line">
+Only through eternity are we closest to heaven.
+</div>
+
+<div class="electro-description">
+
+In Inazuma,
+every fleeting moment
+is measured against eternity.
+
+Lightning vanishes in an instant.
+
+Yet its brilliance remains
+within memory forever.
+
+</div>
+
+</div>
+
+<img
+src="/static/genshin.image/Raiden Shogun.png"
+class="electro-character">
+
+</div>
+
+
+<style>
+
+.electro{
+
+height:120vh;
+
+position:relative;
+
+overflow:hidden;
+
+background:transparent;
+
+mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+}
+
+
+
+
+
+
+.electro-bg{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+ellipse 140% 120%
+
+at 25% 40%,
+
+rgba(153,124,244,.95) 0%,
+
+rgba(153,124,244,.70) 25%,
+
+rgba(153,124,244,.40) 50%,
+
+rgba(153,124,244,.15) 70%,
+
+rgba(153,124,244,.04) 90%,
+
+transparent 100%
+
+);
+
+z-index:0;
+
+}
+
+
+
+
+
+
+.electro-symbol{
+
+position:absolute;
+
+right:5%;
+
+top:10%;
+
+opacity:.5;
+
+z-index:1;
+
+}
+
+.electro-symbol img{
+
+width:700px;
+
+animation:
+
+electroRotate 120s linear infinite;
+
+}
+
+
+
+
+
+
+.electro-lightning{
+
+position:absolute;
+
+left:55%;
+
+top:-200px;
+
+width:8px;
+
+height:1600px;
+
+background:
+
+linear-gradient(
+
+to bottom,
+
+rgba(255,255,255,0),
+
+rgba(255,255,255,.9),
+
+rgba(210,180,255,.95),
+
+rgba(255,255,255,.8),
+
+rgba(255,255,255,0)
+
+);
+
+filter:
+
+blur(4px)
+
+drop-shadow(
+0 0 25px #c59cff
+)
+
+drop-shadow(
+0 0 50px #c59cff
+);
+
+transform:
+
+rotate(12deg);
+
+z-index:2;
+
+animation:
+
+lightningPulse 4s infinite;
+
+}
+
+
+
+
+
+
+.lightning2{
+
+left:62%;
+
+opacity:.45;
+
+height:1400px;
+
+width:4px;
+
+}
+
+
+
+
+
+
+.electro-content{
+
+position:absolute;
+
+right:8%;
+
+top:18%;
+
+width:600px;
+
+z-index:5;
+
+opacity:0;
+
+transform:
+
+scale(.7);
+
+filter:
+
+brightness(15)
+
+blur(20px)
+
+drop-shadow(
+
+0 0 100px white
+
+)
+
+drop-shadow(
+
+0 0 250px #d7b6ff
+
+)
+
+drop-shadow(
+
+0 0 500px #b27dff
+
+);
+
+}
+
+.electro.show .electro-content{
+
+opacity:1;
+
+transform:
+scale(1);
+
+animation:
+
+electroEntrance 1.5s ease,
+
+electroIdle 2.2s infinite 1.5s;
+
+}
+
+
+@keyframes electroEntrance{
+
+0%{
+
+opacity:0;
+
+transform:
+scale(.6);
+
+filter:
+
+brightness(20)
+
+blur(30px)
+
+drop-shadow(0 0 150px white)
+
+drop-shadow(0 0 300px #d7b6ff)
+
+drop-shadow(0 0 600px #b27dff);
+
+}
+
+15%{
+
+opacity:1;
+
+transform:
+scale(1.15);
+
+filter:
+
+brightness(12)
+
+blur(10px)
+
+drop-shadow(0 0 120px white)
+
+drop-shadow(0 0 250px #d7b6ff);
+
+}
+
+40%{
+
+transform:
+scale(.96);
+
+filter:
+
+brightness(3)
+
+blur(0);
+
+}
+
+100%{
+
+transform:
+scale(1);
+
+filter:
+
+brightness(1.2)
+
+drop-shadow(
+0 0 12px #d7b6ff
+);
+
+}
+
+}
+
+
+@keyframes electroIdle{
+
+0%{
+
+filter:
+
+brightness(1.0)
+
+drop-shadow(
+0 0 5px #d7b6ff
+);
+
+}
+
+18%{
+
+filter:
+
+brightness(1.8)
+
+drop-shadow(
+0 0 18px #d7b6ff
+);
+
+}
+
+22%{
+
+filter:
+
+brightness(1.1)
+
+drop-shadow(
+0 0 6px #d7b6ff
+);
+
+}
+
+45%{
+
+filter:
+
+brightness(2.3)
+
+drop-shadow(
+0 0 30px #d7b6ff
+);
+
+}
+
+50%{
+
+filter:
+
+brightness(1.0)
+
+drop-shadow(
+0 0 5px #d7b6ff
+);
+
+}
+
+78%{
+
+filter:
+
+brightness(1.7)
+
+drop-shadow(
+0 0 16px #d7b6ff
+);
+
+}
+
+100%{
+
+filter:
+
+brightness(1.0)
+
+drop-shadow(
+0 0 5px #d7b6ff
+);
+
+}
+
+}
+
+
+
+
+
+.electro-number{
+
+font-family:'Forum',serif;
+
+font-size:24px;
+
+letter-spacing:8px;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+
+
+
+
+
+.electro-title{
+
+font-family:'Philosopher',serif;
+
+font-size:130px;
+
+font-style:italic;
+
+font-weight:700;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 35px rgba(220,190,255,.8);
+
+}
+
+
+
+
+
+
+.electro-line{
+
+font-family:'Forum',serif;
+
+font-size:40px;
+
+color:white;
+
+margin-bottom:50px;
+
+opacity:.95;
+
+}
+
+
+
+
+
+
+.electro-description{
+
+font-family:'Forum',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:white;
+
+opacity:.82;
+
+}
+
+
+
+
+
+
+.electro-character{
+
+position:absolute;
+
+left:5%;
+bottom:0;
+
+height:950px;
+
+opacity:0;
+
+transform:
+scale(.92);
+
+filter:
+blur(12px);
+
+transition:
+
+opacity .25s ease,
+
+transform .4s ease,
+
+filter .4s ease;
+
+}
+
+.electro.show .electro-character{
+
+opacity:1;
+
+transform:
+scale(1);
+
+filter:
+blur(0);
+
+}
+
+
+
+
+
+
+@keyframes lightningPulse{
+
+0%,100%{
+
+opacity:.3;
+
+}
+
+48%{
+
+opacity:.3;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+52%{
+
+opacity:.4;
+
+}
+
+54%{
+
+opacity:1;
+
+}
+
+56%{
+
+opacity:.3;
+
+}
+
+}
+
+
+
+
+
+
+@keyframes electroRotate{
+
+from{
+
+transform:
+rotate(0deg);
+
+}
+
+to{
+
+transform:
+rotate(360deg);
+
+}
+
+}
+
+</style>
+{#raiden[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]#}
+
+
+
+<div class="chapter nahida">
+
+    <div class="irminsul-crown"></div>
+
+    <div class="irminsul-light"></div>
+
+    <div class="dendro-symbol">
+        <img src="/static/genshin.image/Element_Dendro.webp">
+    </div>
+
+    <div class="seed seed1"></div>
+    <div class="seed seed2"></div>
+    <div class="seed seed3"></div>
+    <div class="seed seed4"></div>
+    <div class="seed seed5"></div>
+    <div class="seed seed6"></div>
+    <div class="seed seed7"></div>
+    <div class="seed seed8"></div>
+    <div class="seed seed9"></div>
+    <div class="seed seed10"></div>
+    <div class="seed seed11"></div>
+    <div class="seed seed12"></div>
+
+    <div class="nahida-text">
+
+        <div class="nahida-number">
+            Chapter IV
+        </div>
+
+        <div class="nahida-title">
+            Wisdom
+        </div>
+
+        <div class="nahida-line">
+            The Oasis of Knowledge
+        </div>
+
+
+    </div>
+
+    <img
+    src="/static/genshin.image/Nahida.png"
+    class="nahida-character">
+
+</div>
+
+<style>
+
+.nahida{
+
+height:110vh;
+position:relative;
+overflow:hidden;
+background:transparent;
+
+mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+}
+
+/* 世界树树冠 */
+
+.irminsul-crown{
+
+position:absolute;
+left:50%;
+top:-450px;
+
+width:2200px;
+height:1600px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(185,255,180,.95) 0%,
+rgba(143,208,93,.75) 25%,
+rgba(143,208,93,.45) 45%,
+rgba(143,208,93,.20) 65%,
+rgba(143,208,93,.08) 82%,
+transparent 100%
+);
+
+filter:blur(120px);
+
+opacity:0;
+
+transform:
+translateX(-50%)
+scale(.4);
+
+z-index:0;
+
+transition:
+opacity .8s,
+transform .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+.nahida.show .irminsul-crown{
+
+opacity:1;
+
+transform:
+translateX(-50%)
+scale(1);
+
+animation:
+irminsulGlow 8s ease-in-out infinite;
+
+}
+
+/* 生命光 */
+
+.irminsul-light{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+width:1200px;
+height:1200px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(220,255,210,.35),
+rgba(143,208,93,.15),
+transparent 75%
+);
+
+filter:blur(80px);
+
+opacity:0;
+
+transform:
+translate(-50%,-50%)
+scale(.2);
+
+z-index:1;
+
+transition:
+opacity .5s ease,
+transform .5s ease;
+
+transition-delay:.15s;
+
+}
+
+.nahida.show .irminsul-light{
+
+opacity:1;
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+}
+
+/* 草元素图标 */
+
+.dendro-symbol{
+
+position:absolute;
+
+right:120px;
+top:120px;
+
+z-index:3;
+
+opacity:0;
+
+transform:
+scale(.5)
+rotate(-90deg);
+
+transition:
+opacity .5s cubic-bezier(.22,1,.36,1),
+transform .5s cubic-bezier(.22,1,.36,1);
+
+transition-delay:.25s;
+
+}
+
+.nahida.show .dendro-symbol{
+
+opacity:.12;
+
+transform:
+scale(1)
+rotate(0deg);
+
+}
+
+.dendro-symbol img{
+
+width:260px;
+
+animation:
+dendroSpin 45s linear infinite;
+
+}
+
+/* 标题 */
+
+.nahida-text{
+
+position:absolute;
+
+top:80px;
+left:50%;
+
+transform:
+translateX(-50%)
+translateY(60px);
+
+width:1200px;
+
+text-align:center;
+
+z-index:5;
+
+opacity:0;
+
+transition:
+opacity .5s ease,
+transform .5s ease;
+
+transition-delay:.35s;
+
+}
+
+.nahida.show .nahida-text{
+
+opacity:1;
+
+transform:
+translateX(-50%)
+translateY(0);
+
+}
+
+.nahida-number{
+
+font-family:'Forum',serif;
+font-size:24px;
+letter-spacing:8px;
+
+color:white;
+
+margin-bottom:5px;
+
+}
+
+.nahida-title{
+
+font-family:'Philosopher',serif;
+
+font-size:115px;
+font-weight:700;
+font-style:italic;
+
+color:white;
+
+margin-bottom:0px;
+
+text-shadow:
+0 0 40px rgba(255,255,255,.25);
+
+}
+
+.nahida-line{
+
+font-family:'Forum',serif;
+
+font-size:32px;
+
+color:white;
+
+margin-bottom:45px;
+
+}
+
+/* Nahida */
+
+.nahida-character{
+
+position:absolute;
+
+left:50%;
+bottom:30px;
+
+height:680px;
+
+opacity:0;
+
+transform:
+translateX(-50%)
+translateY(80px)
+scale(.75);
+
+filter:
+blur(18px)
+drop-shadow(
+0 0 80px rgba(180,255,180,.9)
+);
+
+z-index:4;
+
+transition:
+opacity .5s cubic-bezier(.22,1,.36,1),
+transform .5s cubic-bezier(.22,1,.36,1),
+filter .5s cubic-bezier(.22,1,.36,1);
+
+transition-delay:.45s;
+
+}
+
+.nahida.show .nahida-character{
+
+opacity:1;
+
+transform:
+translateX(-50%)
+translateY(0)
+scale(1);
+
+filter:
+blur(0)
+drop-shadow(
+0 25px 35px rgba(0,0,0,.15)
+);
+
+}
+
+/* 世界树种子 */
+
+.seed{
+
+position:absolute;
+
+border-radius:50%;
+
+background:#dfffc5;
+
+z-index:3;
+
+opacity:0;
+
+box-shadow:
+0 0 8px #dfffc5,
+0 0 18px #dfffc5;
+
+}
+
+
+/* 位置 */
+
+.seed1  { left:42%; bottom:240px; width:6px; height:6px; }
+.seed2  { left:45%; bottom:260px; width:8px; height:8px; }
+.seed3  { left:48%; bottom:220px; width:7px; height:7px; }
+.seed4  { left:51%; bottom:280px; width:10px; height:10px; }
+.seed5  { left:54%; bottom:240px; width:8px; height:8px; }
+.seed6  { left:57%; bottom:260px; width:6px; height:6px; }
+
+.seed7  { left:44%; bottom:300px; width:9px; height:9px; }
+.seed8  { left:47%; bottom:340px; width:7px; height:7px; }
+.seed9  { left:50%; bottom:320px; width:11px; height:11px; }
+.seed10 { left:53%; bottom:350px; width:8px; height:8px; }
+.seed11 { left:56%; bottom:300px; width:7px; height:7px; }
+.seed12 { left:59%; bottom:330px; width:9px; height:9px; }
+
+
+.nahida.show .seed{
+
+animation-name: seedRise;
+
+animation-timing-function: linear;
+
+animation-iteration-count: infinite;
+
+}
+
+
+/* 每颗不同速度 */
+
+.seed1  { animation-duration:4.2s; animation-delay:0s; }
+.seed2  { animation-duration:5.1s; animation-delay:.4s; }
+.seed3  { animation-duration:4.8s; animation-delay:.8s; }
+.seed4  { animation-duration:5.6s; animation-delay:1.1s; }
+.seed5  { animation-duration:4.5s; animation-delay:1.4s; }
+.seed6  { animation-duration:5.3s; animation-delay:1.8s; }
+
+.seed7  { animation-duration:4.7s; animation-delay:2.1s; }
+.seed8  { animation-duration:5.8s; animation-delay:2.4s; }
+.seed9  { animation-duration:4.9s; animation-delay:2.8s; }
+.seed10 { animation-duration:5.5s; animation-delay:3.1s; }
+.seed11 { animation-duration:4.4s; animation-delay:3.5s; }
+.seed12 { animation-duration:5.2s; animation-delay:3.8s; }
+/* 动画 */
+
+@keyframes seedRise{
+
+0%{
+
+opacity:0;
+
+transform:
+translate(0,40px)
+scale(.4);
+
+}
+
+10%{
+
+opacity:.8;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translate(
+30px,
+-420px
+)
+scale(1.8);
+
+}
+
+}
+
+@keyframes irminsulGlow{
+
+0%,100%{
+
+transform:
+translateX(-50%)
+scale(1);
+
+}
+
+50%{
+
+transform:
+translateX(-50%)
+scale(1.05);
+
+}
+
+}
+
+@keyframes dendroSpin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+</style>
+
+
+<div class="chapter furina">
+
+    <div class="hydro-glow"></div>
+
+    <div class="hydro-ripple"></div>
+
+    <div class="hydro-stage-light"></div>
+
+    <div class="hydro-symbol">
+
+        <img
+        src="/static/genshin.image/Element_Hydro.webp">
+
+    </div>
+
+    <div class="furina-text">
+
+        <div class="furina-number">
+            Chapter V
+        </div>
+
+        <div class="furina-title">
+            Justice
+        </div>
+
+        <div class="furina-line">
+            Every verdict echoes upon the water.
+        </div>
+
+        <div class="furina-description">
+
+            In Fontaine, truth is not hidden.
+
+            It is reflected.
+
+            Every trial is a performance.
+
+            Every judgment, a ripple across eternity.
+
+        </div>
+
+    </div>
+
+    <img
+    src="/static/genshin.image/Furina.png"
+    class="furina-character">
+
+</div>
+
+
+<style>
+
+.furina{
+
+height:110vh;
+
+position:relative;
+
+overflow:hidden;
+
+background:transparent;
+
+
+mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+}
+
+
+/* 背景水光 */
+
+.hydro-glow{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+ellipse 150% 130%
+
+at 78% 35%,
+
+rgba(120,210,255,.95) 0%,
+
+rgba(120,210,255,.55) 35%,
+
+rgba(120,210,255,.20) 65%,
+
+transparent 100%
+
+);
+
+z-index:0;
+
+}
+
+
+/* 聚光灯 */
+
+.hydro-stage-light{
+
+position:absolute;
+
+right:4%;
+
+top:-150px;
+
+width:900px;
+
+height:1200px;
+
+opacity:0;
+
+background:
+
+linear-gradient(
+
+to bottom,
+
+rgba(255,255,255,.42),
+
+rgba(255,255,255,.12),
+
+transparent
+
+);
+
+clip-path:
+
+polygon(
+
+35% 0%,
+
+65% 0%,
+
+100% 100%,
+
+0% 100%
+
+);
+
+filter:
+
+blur(8px);
+
+z-index:1;
+
+}
+
+.furina.show .hydro-stage-light{
+
+opacity:1;
+
+transform:
+
+translateY(120px);
+
+transition:
+
+1.2s ease;
+
+}
+
+
+/* 水元素符号 */
+
+.hydro-symbol{
+
+position:absolute;
+
+right:-120px;
+
+top:50%;
+
+transform:
+
+translateY(-50%);
+
+opacity:0;
+
+z-index:1;
+
+}
+
+.hydro-symbol img{
+
+width:850px;
+
+animation:
+
+hydroSpin 120s linear infinite;
+
+}
+
+.furina.show .hydro-symbol{
+
+opacity:.08;
+
+transition:
+
+2s ease;
+
+}
+
+
+/* 波纹 */
+
+.hydro-ripple{
+
+position:absolute;
+
+right:22%;
+
+bottom:120px;
+
+width:150px;
+
+height:150px;
+
+border:
+
+2px solid rgba(255,255,255,.35);
+
+border-radius:50%;
+
+opacity:0;
+
+z-index:2;
+
+}
+
+.furina.show .hydro-ripple{
+
+animation:
+
+hydroRipple 5s infinite;
+
+}
+
+
+/* 第二层波纹 */
+
+.hydro-ripple::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border:
+
+2px solid rgba(255,255,255,.22);
+
+border-radius:50%;
+
+animation:
+
+hydroRipple2 5s infinite;
+
+animation-delay:2.5s;
+
+}
+
+
+/* 文字区 */
+
+.furina-text{
+
+position:absolute;
+
+left:8%;
+
+top:15%;
+
+width:650px;
+
+z-index:5;
+
+opacity:0;
+
+transform:
+
+translateX(-120px);
+
+}
+
+.furina.show .furina-text{
+
+opacity:1;
+
+transform:
+
+translateX(0);
+
+transition:
+
+1.2s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* Chapter */
+
+.furina-number{
+
+font-family:'Forum',serif;
+
+font-size:24px;
+
+letter-spacing:8px;
+
+color:white;
+
+margin-bottom:25px;
+
+}
+
+
+/* Justice */
+
+.furina-title{
+
+font-family:'Philosopher',serif;
+
+font-size:130px;
+
+font-style:italic;
+
+font-weight:700;
+
+color:white;
+
+margin-bottom:30px;
+
+text-shadow:
+
+0 0 40px rgba(255,255,255,.35);
+
+}
+
+
+/* 副标题 */
+
+.furina-line{
+
+font-family:'Forum',serif;
+
+font-size:38px;
+
+color:white;
+
+margin-bottom:50px;
+
+opacity:.95;
+
+}
+
+
+/* 正文 */
+
+.furina-description{
+
+font-family:'Forum',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:white;
+
+opacity:.85;
+
+}
+
+
+/* Furina */
+
+.furina-character{
+
+position:absolute;
+
+right:6%;
+
+bottom:-20px;
+
+height:860px;
+
+opacity:0;
+
+transform:
+
+translateY(120px)
+
+scale(.85)
+
+rotate(5deg);
+
+z-index:4;
+
+filter:
+
+blur(10px)
+
+drop-shadow(
+0 30px 40px rgba(0,0,0,.2)
+);
+
+}
+
+.furina.show .furina-character{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1)
+
+rotate(0deg);
+
+filter:
+
+blur(0)
+
+drop-shadow(
+0 30px 40px rgba(0,0,0,.2)
+);
+
+transition:
+
+1.8s cubic-bezier(.22,1,.36,1);
+
+transition-delay:.5s;
+
+}
+
+
+/* 动画 */
+
+@keyframes hydroSpin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+@keyframes hydroRipple{
+
+0%{
+
+opacity:.7;
+
+transform:
+
+scale(.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+scale(8);
+
+}
+
+}
+
+
+@keyframes hydroRipple2{
+
+0%{
+
+opacity:.5;
+
+transform:
+
+scale(.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+scale(8);
+
+}
+
+}
+
+</style>
+
+
+
+
+<div class="chapter pyro">
+
+    <div class="pyro-flare"></div>
+
+    <div class="pyro-symbol">
+        <img src="/static/genshin.image/Element_Pyro.webp">
+    </div>
+
+    <div class="pyro-content">
+
+        <div class="pyro-number">
+            Chapter VI
+        </div>
+
+        <div class="pyro-title">
+            War
+        </div>
+
+        <div class="pyro-line">
+            Let the world witness our blazing will.
+        </div>
+
+        <div class="pyro-description">
+            In Natlan, strength is not inherited.
+            It is forged.
+            Through battle, through courage,
+            through every challenge embraced
+            beneath the burning sun.
+        </div>
+
+    </div>
+
+    <img
+    src="/static/genshin.image/Mavuika.png"
+    class="pyro-character">
+
+</div>
+
+
+<style>
+
+.pyro{
+
+height:120vh;
+
+position:relative;
+
+overflow:hidden;
+
+background:transparent;
+
+mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.8) 1%,
+
+black 2%,
+
+black 82%,
+
+rgba(0,0,0,.8) 92%,
+
+transparent 100%
+
+);
+
+}
+
+
+/* 太阳背景 */
+
+.pyro-flare{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+ellipse 140% 120%
+
+at 75% 40%,
+
+rgba(255,220,120,.75) 0%,
+
+rgba(255,160,80,.35) 35%,
+
+rgba(255,100,40,.15) 60%,
+
+transparent 100%
+
+);
+
+filter:blur(90px);
+
+animation:
+
+pyroBreath 6s ease-in-out infinite;
+
+z-index:0;
+
+}
+
+
+/* 火元素图标 */
+
+.pyro-symbol{
+
+position:absolute;
+
+right:3%;
+
+top:50%;
+
+transform:
+
+translateY(-50%);
+
+opacity:.05;
+
+z-index:1;
+
+}
+
+.pyro-symbol img{
+
+width:700px;
+
+animation:
+
+pyroRotate 120s linear infinite;
+
+}
+
+
+/* 文字区域 */
+
+.pyro-content{
+
+position:absolute;
+
+left:8%;
+
+top:10%;
+
+width:650px;
+
+z-index:5;
+
+opacity:0;
+
+transform:
+
+translateY(50px);
+
+}
+
+.pyro.show .pyro-content{
+
+animation:
+
+pyroTitleEnter 1.8s forwards;
+
+}
+
+
+/* Chapter */
+
+.pyro-number{
+
+font-family:'Forum',serif;
+
+font-size:24px;
+
+letter-spacing:10px;
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+
+/* 标题 */
+
+.pyro-title{
+
+font-family:'Philosopher',serif;
+
+font-size:130px;
+
+font-style:italic;
+
+font-weight:700;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 30px rgba(255,180,80,.35);
+
+}
+
+
+/* 副标题 */
+
+.pyro-line{
+
+font-family:'Forum',serif;
+
+font-size:40px;
+
+color:white;
+
+margin-bottom:40px;
+
+opacity:.95;
+
+}
+
+
+/* 正文 */
+
+.pyro-description{
+
+font-family:'Forum',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:white;
+
+opacity:.88;
+
+max-width:600px;
+
+}
+
+
+/* Mavuika */
+
+.pyro-character{
+
+position:absolute;
+
+right:-20%;
+
+top:0%;
+
+height:800px;
+
+opacity:0;
+
+transform:
+
+translateX(150px)
+
+translateY(60px)
+
+scale(.88);
+
+z-index:4;
+
+filter:
+
+brightness(1.05)
+
+drop-shadow(
+0 30px 50px rgba(0,0,0,.25)
+);
+
+}
+
+
+/* 入场 */
+
+.pyro.show .pyro-character{
+
+animation:
+
+mavuikaEnter 2.2s forwards;
+
+}
+
+
+/* 太阳呼吸 */
+
+@keyframes pyroBreath{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:.85;
+
+}
+
+50%{
+
+transform:scale(1.06);
+
+opacity:1;
+
+}
+
+}
+
+
+/* 文字入场 */
+
+@keyframes pyroTitleEnter{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateY(50px);
+
+filter:
+
+brightness(2);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+filter:none;
+
+}
+
+}
+
+
+/* Mavuika入场 */
+
+@keyframes mavuikaEnter{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateX(180px)
+
+translateY(80px)
+
+scale(.82);
+
+filter:
+
+blur(8px)
+
+brightness(1.4);
+
+}
+
+50%{
+
+opacity:.8;
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+
+translateX(0)
+
+translateY(0)
+
+scale(.88);
+
+filter:
+
+blur(0)
+
+brightness(1);
+
+}
+
+}
+
+
+/* 火元素旋转 */
+
+@keyframes pyroRotate{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+</style>
+
+
+
+
+<div class="chapter moon">
+
+    <div class="moon-bg"></div>
+
+    <div class="moon-glow"></div>
+
+    <div class="moon-fog"></div>
+
+    <div class="moon-text">
+
+        <div class="moon-number">
+            Chapter VII
+        </div>
+
+        <div class="moon-title">
+            Moon
+        </div>
+
+        <div class="moon-line">
+            The moon remembers what the world forgets.
+        </div>
+
+        
+    </div>
+
+    <img
+    src="/static/genshin.image/Columbina.png"
+    class="moon-character">
+
+</div>
+
+
+<style>
+
+.moon{
+
+height:120vh;
+
+position:relative;
+
+overflow:hidden;
+
+background:transparent;
+
+mask-image:
+
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.15) 8%,
+
+rgba(0,0,0,.45) 15%,
+
+rgba(0,0,0,.75) 22%,
+
+black 35%,
+
+black 70%,
+
+rgba(0,0,0,.8) 80%,
+
+rgba(0,0,0,.5) 90%,
+
+rgba(0,0,0,.2) 96%,
+
+transparent 100%
+
+);
+
+-webkit-mask-image:
+
+linear-gradient(
+
+to bottom,
+
+transparent 0%,
+
+rgba(0,0,0,.15) 8%,
+
+rgba(0,0,0,.45) 15%,
+
+rgba(0,0,0,.75) 22%,
+
+black 35%,
+
+black 70%,
+
+rgba(0,0,0,.8) 80%,
+
+rgba(0,0,0,.5) 90%,
+
+rgba(0,0,0,.2) 96%,
+
+transparent 100%
+
+);
+}
+
+
+
+/* 背景 */
+
+
+
+
+.moon-bg{
+
+position:absolute;
+inset:0;
+
+background-image:
+url("/static/genshin.image/Silvermoon Hall.png");
+
+background-size:cover;
+background-position:center;
+
+filter:
+blur(2px)
+brightness(.75);
+
+
+z-index:0;
+
+}
+
+
+
+
+
+/* 月光 */
+
+.moon-glow{
+
+position:absolute;
+
+left:50%;
+
+top:35%;
+
+transform:translate(-50%,-50%);
+
+width:1400px;
+
+height:1400px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(180,220,255,.55) 0%,
+
+rgba(160,190,255,.25) 40%,
+
+transparent 75%
+
+);
+
+filter:blur(80px);
+
+animation:
+
+moonPulse 8s ease-in-out infinite;
+
+z-index:1;
+
+}
+
+
+
+/* 梦境雾 */
+
+.moon-fog{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+circle at 20% 70%,
+
+rgba(255,255,255,.08),
+
+transparent 35%
+
+),
+
+radial-gradient(
+
+circle at 80% 25%,
+
+rgba(180,220,255,.12),
+
+transparent 30%
+
+);
+
+filter:blur(60px);
+
+z-index:2;
+
+}
+
+
+
+/* 文字 */
+
+.moon-text{
+
+position:absolute;
+
+left:50%;
+
+top:12%;
+
+transform:translateX(-50%);
+
+width:1000px;
+
+text-align:center;
+
+z-index:5;
+
+opacity:0;
+
+}
+
+.moon.show .moon-text{
+
+animation:
+
+moonTextEnter 1.5s forwards;
+
+}
+
+
+
+.moon-number{
+
+font-family:'Forum',serif;
+
+font-size:24px;
+
+letter-spacing:12px;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 10px rgba(255,255,255,.8),
+
+0 0 25px rgba(180,220,255,.5);
+
+}
+
+
+
+.moon-title{
+
+font-family:'Philosopher',serif;
+
+font-size:150px;
+
+font-style:italic;
+
+font-weight:700;
+
+color:white;
+
+margin-bottom:0px;
+
+text-shadow:
+
+0 0 20px rgba(255,255,255,.9),
+
+0 0 60px rgba(220,235,255,.9),
+
+0 0 160px rgba(180,220,255,.7);
+
+}
+
+
+
+.moon-line{
+
+font-family:'Forum',serif;
+
+font-size:40px;
+
+color:white;
+
+margin-bottom:40px;
+
+opacity:.95;
+
+text-shadow:
+
+0 0 8px rgba(255,255,255,.5),
+
+0 0 20px rgba(180,220,255,.25);
+
+}
+
+
+
+.moon-description{
+
+font-family:'Forum',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:white;
+
+opacity:.82;
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+
+
+/* Columbina */
+
+.moon-character{
+
+position:absolute;
+
+left:50%;
+
+bottom:40px;
+
+height:760px;
+
+transform:
+
+translateX(-50%)
+
+translateY(80px)
+
+scale(.9);
+
+opacity:0;
+
+z-index:4;
+
+filter:
+
+drop-shadow(
+0 0 25px rgba(255,255,255,.8)
+)
+
+drop-shadow(
+0 0 80px rgba(180,220,255,.8)
+)
+
+drop-shadow(
+0 0 180px rgba(180,220,255,.45)
+);
+
+}
+
+
+
+.moon.show .moon-character{
+
+animation:
+
+columbinaAwaken 2s forwards;
+
+}
+
+
+
+/* 月光呼吸 */
+
+@keyframes moonPulse{
+
+0%,100%{
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1);
+
+opacity:.8;
+
+}
+
+50%{
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1.08);
+
+opacity:1;
+
+}
+
+}
+
+
+
+/* 文字浮现 */
+
+@keyframes moonTextEnter{
+
+0%{
+
+opacity:0;
+
+filter:
+
+blur(20px)
+
+brightness(2);
+
+}
+
+100%{
+
+opacity:1;
+
+filter:none;
+
+}
+
+}
+
+
+
+/* Columbina苏醒 */
+
+@keyframes columbinaAwaken{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateX(-50%)
+
+translateY(120px)
+
+scale(.75);
+
+filter:
+
+blur(20px)
+
+brightness(2);
+
+}
+
+40%{
+
+opacity:.7;
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+
+translateX(-50%)
+
+translateY(0)
+
+scale(.9);
+
+filter:
+
+blur(0)
+
+brightness(1)
+
+drop-shadow(
+0 0 40px rgba(255,255,255,.7)
+)
+
+drop-shadow(
+0 0 120px rgba(180,220,255,.5)
+);
+
+}
+
+}
+
+</style>
+
+
+<section class="epilogue">
+
+    <div class="epilogue-bg"></div>
+
+    <div class="epilogue-content">
+
+        <div class="epi-line epi1">
+            Across seven nations,
+        </div>
+
+        <div class="epi-line epi2">
+            countless stories have been told.
+        </div>
+
+        <div class="epi-line epi3">
+            Though paths may part,
+        </div>
+
+        <div class="epi-line epi4">
+            their footprints remain on our journey.
+        </div>
+
+        <div class="epi-line epi5">
+            Learn more about your favorite friends here:
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+.epilogue{
+
+height:140vh;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+text-align:center;
+
+}
+
+
+.epilogue-bg{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+circle at center,
+
+rgba(255,255,255,.25),
+
+rgba(255,255,255,.08),
+
+transparent 75%
+
+);
+
+filter:blur(80px);
+
+}
+
+
+.epilogue-content{
+
+position:relative;
+
+z-index:5;
+
+width:100%;
+
+
+
+margin-top:300px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+
+.epi-line{
+
+font-family:'Forum',serif;
+
+font-size:45px;
+
+color:white;
+
+opacity:0;
+
+transform:
+
+translateY(50px);
+
+margin:52px 0;
+
+text-shadow:
+
+2px 2px 4px rgba(0,0,0,.9),
+
+0 0 12px rgba(0,0,0,.7);
+
+
+}
+
+
+.epilogue.show .epi1{
+
+animation:
+
+epiAppear 1.5s forwards;
+
+}
+
+.epilogue.show .epi2{
+
+animation:
+
+epiAppear 1.75s forwards;
+
+animation-delay:.8s;
+
+}
+
+.epilogue.show .epi3{
+
+animation:
+
+epiAppear 2s forwards;
+
+animation-delay:1.6s;
+
+}
+
+.epilogue.show .epi4{
+
+animation:
+
+epiAppear 2s forwards;
+
+animation-delay:2.4s;
+
+font-size:50px;
+
+color:#fff7da;
+
+text-shadow:
+
+text-shadow:
+
+2px 2px 5px rgba(0,0,0,.9),
+
+0 4px 12px rgba(0,0,0,.8),
+
+0 0 15px rgba(255,240,180,.25);
+
+}
+
+.epilogue.show .epi5{
+
+animation:
+epiAppear 2.5s forwards;
+
+animation-delay:3.2s;
+
+font-size:60px;
+
+color:#fff7da;
+
+text-shadow:
+
+0 2px 4px rgba(0,0,0,.95),
+
+0 6px 18px rgba(0,0,0,.75),
+
+0 0 25px rgba(255,220,120,.35);
+
+}
+
+
+@keyframes epiAppear{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+</style>
+
+{#搜索框【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【【#}
+
+<section
+class="search-section"
+id="search-section">
+
+<div class="archive-panel">
 
 <h1
 style="
 font-family:'IM Fell English SC', serif;
-font-size:50px;
+font-size:70px;
 text-align:center;
 color:#c89b3c;
-margin-top:100px;
+margin-top:0px;
 margin-bottom:0px;
-text-shadow:0px 0px 10px white; {#genshinstyle,kind of blingbling(#}
+text-shadow:
+
+0 2px 4px rgba(0,0,0,.8),
+
+0 0 20px rgba(255,210,120,.5);
 ">
 Genshin Character Search
 </h1>
@@ -35,13 +4105,17 @@ Genshin Character Search
 <p
 style="
 font-family:'Forum', serif;
-font-size:25px;
+font-size:35px;
 text-align:center;
 color: #c89b3c;
 margin-top:20px;
 margin-bottom:40px;
 letter-spacing:1px;
-text-shadow:0px 0px 10px white;
+text-shadow:
+
+0 2px 4px rgba(0,0,0,.9),
+
+0 0 12px rgba(255,210,120,.35);
 ">
 Song of the Welkin Moon
 </p>
@@ -50,39 +4124,88 @@ Song of the Welkin Moon
 <form
 action="/genshin"
 method="GET"
+
 style="
 text-align:center;
-">
+
+backdrop-filter:blur(12px);
+
+background:
+rgba(255,248,220,.08);
+
+padding:45px 55px;
+
+border-radius:35px;
+
+border:
+1px solid rgba(255,220,160,.25);
+
+box-shadow:
+0 0 40px rgba(255,220,120,.08);
+"
+>
 
 <input
 id="search-box"
 
 style="
 font-family:'Forum', serif;
-width:300px;
-padding:10px;
-font-size:18px;
-border-radius:10px;
-border:1px solid gray;
+
+width:520px;
+
+padding:14px 18px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+rgba(255,255,255,.92);
+
+box-shadow:
+0 0 20px rgba(255,255,255,.15);
+
+outline:none;
 "
 
 type="text"
 name="character_name"
-placeholder="Enter character name">
+
+placeholder="Enter a character name..."
+>
 
 <button 
 style="
 font-family:'Forum', serif;
-padding:10px 20px;
-font-size:18px;
-background-color:#c89b3c;
+
+padding:14px 28px;
+
+font-size:22px;
+
 color:white;
+
 border:none;
-border-radius:10px;
+
+border-radius:12px;
+
 cursor:pointer;
+
+background:
+linear-gradient(
+135deg,
+#c89b3c,
+#e9c86f
+);
+
+box-shadow:
+0 0 20px rgba(255,210,120,.25);
+
+transition:.3s;
 "
 type="submit">
-Search
+Explore
 </button>
 
 <div
@@ -99,26 +4222,33 @@ overflow:hidden;
 
 </form>
 
+
 <h2
 style="
 font-family:'Forum', serif;
 text-align:center;
-margin-top:50px;
-color:#444;
-font-size:25px;
+color:#fff4cf;
+font-size:24px;
+margin-top:20px;
+margin-bottom:20px;
 font-weight:normal;
+text-shadow:
+
+0 2px 4px rgba(0,0,0,.9),
+
+0 0 10px rgba(255,210,120,.25);
 ">
-Popular Characters
+Featured Companions
 </h2>
 
 <div
 style="
-width:520px;
-margin:auto;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:220px 220px;
 gap:15px;
+justify-content:center;
+margin:auto;
+width:fit-content;
 ">
 
 {% for character in popular_characters %}
@@ -126,11 +4256,21 @@ gap:15px;
 href="/genshin?character_name={{ character.name }}"
 style="
 font-family:'Forum', serif;
-font-size:18px;
+font-size:19px;
 display:inline-block;
-width:120px;
-padding:10px;
+min-width:150px;
+padding:10px 20px;
 background:{{ character.color }};
+
+opacity:.88;
+
+border:
+
+1px solid rgba(255,255,255,.18);
+
+box-shadow:
+
+0 6px 18px rgba(0,0,0,.15);
 color:white;
 text-decoration:none;
 border-radius:8px;
@@ -201,5 +4341,171 @@ box.addEventListener(
 </script>
 
 
+</div>
+
+</section>
+
+<style>
+.search-section{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+opacity:0;
+
+transform:
+
+translateY(120px);
+
+transition:
+
+1.8s cubic-bezier(.22,1,.36,1);
+
+}
+
+.archive-panel{
+
+width:1300px;
+
+padding:
+
+40px 60px
+120px 60px;
+
+border-radius:20px;
+
+background:
+
+linear-gradient(
+
+to bottom,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.15),
+
+rgba(255,255,255,.28)
+
+);
+
+backdrop-filter:
+
+blur(2px);
+
+-webkit-backdrop-filter:
+
+blur(2px);
+
+border:
+
+2px solid rgba(255,240,180,.25);
+
+box-shadow:
+
+0 0 60px rgba(255,255,255,.10);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.search-section.show{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+</style>
+
+
+<script>
+
+const worldLayer =
+document.getElementById("world-layer")
+
+const epilogueSection =
+document.querySelector(".epilogue")
+
+const searchSection =
+document.querySelector(".search-section")
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
+
+}
+
+})
+
+},
+
+{
+threshold:0.4
+}
+
+)
+
+observer.observe(epilogueSection)
+observer.observe(searchSection)
+
+
+
+window.addEventListener(
+
+"scroll",
+
+()=>{
+
+const rect =
+epilogueSection.getBoundingClientRect()
+
+const start =
+window.innerHeight * 0.9
+
+const end =
+-window.innerHeight * 0.4
+
+let progress =
+(start - rect.top) /
+(start - end)
+
+progress =
+Math.max(
+0,
+Math.min(1,progress)
+)
+
+const alpha =
+0.8 * (1-progress)
+
+worldLayer.style.background =
+`rgba(255,255,255,${alpha})`
+
+}
+
+)
+
+</script>
+
 
 </body>
+
+

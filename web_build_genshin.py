@@ -34,6 +34,22 @@ def get_character(name):
     row = result.iloc[0]
     return row
 
+def get_related_characters(region, current_name):
+    result = df[
+        (df["region"] == region)
+        &
+        (df["character_name"] != current_name)
+    ]
+    return result["character_name"].head(8).tolist()
+
+def get_same_element_characters(vision, current_name):
+    result = df[
+        (df["vision"] == vision)
+        &
+        (df["character_name"] != current_name)
+    ]
+    return result["character_name"].head(8).tolist()
+
 element_colors = {
     'Geo': "#eacd90",
     'Pyro': '#ff6b6b',
@@ -80,17 +96,70 @@ def genshin():
     else:
         return '<h1>Name not found</h1>'
   
-  
+
 @app.route("/genshin/<name>")
 def detail(name):
     row = get_character(name)
     color = element_colors[row['vision']]
     dark_color = darken(color)
+    related_characters = get_related_characters(
+        row["region"],
+        row["character_name"]
+    )
+    element_characters = get_same_element_characters(
+    row["vision"],
+    row["character_name"]
+    )
+    affiliation = row["affiliation"]
+    
+    levels = [20,40,50,60,70,80,90]
+    hp_growth = [
+        int(row[f"hp_{lv}_{lv}"])
+        for lv in levels
+    ]
+    atk_growth = [
+        int(row[f"atk_{lv}_{lv}"])
+        for lv in levels
+    ]
+    def_growth = [
+        int(row[f"def_{lv}_{lv}"])
+        for lv in levels
+    ]
+    
+    rarity = row["star_rarity"]
+    same_rarity = df[
+        df["star_rarity"] == rarity
+    ]
+    avg_hp_growth = []
+    for lv in levels:
+        avg_hp_growth.append(
+            float(same_rarity[f"hp_{lv}_{lv}"].mean())
+        )
+    avg_atk_growth = []
+    for lv in levels:
+        avg_atk_growth.append(
+            float(same_rarity[f"atk_{lv}_{lv}"].mean())
+        )
+    avg_def_growth = []
+    for lv in levels:
+        avg_def_growth.append(
+            float(same_rarity[f"def_{lv}_{lv}"].mean())
+        )
+        
     return render_template(
         "detail.html",
         row= row,
         color = color,
-        dark_color = dark_color
+        dark_color = dark_color,
+        related_characters = related_characters,
+        element_characters = element_characters,
+        affiliation = affiliation,
+        hp_growth=hp_growth,
+        atk_growth=atk_growth,
+        def_growth=def_growth,
+        avg_hp_growth=avg_hp_growth,
+        avg_atk_growth=avg_atk_growth,
+        avg_def_growth=avg_def_growth
     )
 
 if __name__ == "__main__":

@@ -2,11 +2,13 @@
 href="https://fonts.googleapis.com/css2?family=Forum&family=IM+Fell+English+SC&display=swap"
 rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <body style="background-color:#f5f5f5;">
 
 <div
 style="
-width:90%;
+width:95%;
 max-width:1200px;
 margin:30px auto;
 padding:30px;
@@ -33,47 +35,985 @@ style="
 width:400px;
 text-align:center;
 ">
+
 <img
 src="/static/genshin.image/{{ row['character_name'] }}.png"
 style="
-width:350px;
+width:460px;
 display:block;
-margin:auto;
+margin-top:15px;
+filter:
+drop-shadow(
+0 20px 40px rgba(0,0,0,0.12)
+);
 ">
-
-<h1
-style="
-font-family:'IM Fell English SC', serif;
-color: #2d2039;
-text-align:center;
-">
-{{ row['character_name'] }}
-</h1>
 
 </div>
 
 <div
 style="
-font-family:'Forum', serif;
 flex:1;
-padding-top:40px;
+padding-top:20px;
+font-family:'Forum', serif;
+">
+
+
+
+
+
+
+
+
+
+
+
+
+{#[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]#}
+{#字段信息#}
+<div
+style="
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(18px);
+padding:35px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.35);
+box-shadow:
+0 20px 60px rgba(0,0,0,0.04);
+margin-bottom:30px;
+">
+
+<h2
+style="
+font-size:56px;
+margin:0;
+text-align:center;
+font-family:'IM Fell English SC', serif;
+color:{{ dark_color }};
+letter-spacing:1px;
+">
+{{ row["character_name"] }}
+</h2>
+
+<p
+style="
+font-size:30px;
+opacity:0.9;
+margin-top:8px;
+margin-bottom:6px;
+text-align:center;
+font-family:'Forum', serif;
+color:{{ dark_color }};
+">
+{{ row["vision"] }} • {{ row["region"] }}
+</p>
+
+<p
+style="
+text-align:center;
+font-size:24px;
+color:#e4bb53;
+letter-spacing:6px;
+margin-bottom:35px;
+">
+{{ "★" * row["star_rarity"] }}
+</p>
+
+<div
+style="
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:22px;
+">
+
+<div class="info-card">
+    <h3>Weapon</h3>
+    <p>{{ row["weapon_type"] }}</p>
+</div>
+
+<div class="info-card">
+    <h3>Model</h3>
+    <p>{{ row["model"] }}</p>
+</div>
+
+<div class="info-card">
+    <h3>Constellation</h3>
+    <p>{{ row["constellation"] }}</p>
+</div>
+
+<div class="info-card">
+    <h3>Birthday</h3>
+    <p>{{ row["birthday"] }}</p>
+</div>
+
+<div class="info-card affiliation-card">
+    <h3>Affiliations</h3>
+    <div class="tag-container">
+    {% for tag in affiliation.split(",") %}
+
+        <span class="affiliation-tag">
+            {{ tag.strip() }}
+        </span>
+
+    {% endfor %}
+
+    </div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<style>
+.info-card{
+padding:20px;
+background:rgba(255,255,255,0.28);
+backdrop-filter:blur(14px);
+border-radius:24px;
+border:1px solid rgba(255,255,255,0.35);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,0.04);
+transition:0.3s;
+}
+
+.info-card:hover{
+transform:translateY(-4px);
+box-shadow:
+0 20px 50px rgba(0,0,0,0.08);
+}
+
+.info-card h3{
+margin:0 0 12px 0;
+font-size:14px;
+letter-spacing:2px;
+opacity:0.5;
+text-transform:uppercase;
+}
+
+.info-card p{
+margin:0;
+font-size:23px;
+line-height:1.35;
+font-family:'Forum', serif;
+word-break:break-word;
+}
+
+.affiliation-card{
+grid-column:span 2;
+padding:28px;
+}
+
+.tag-container{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+margin-top:12px;
+}
+
+.affiliation-tag{
+padding:12px 22px;
+background:rgba(255,255,255,0.35);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.45);
+border-radius:999px;
+font-size:22px;
+color:#333;
+box-shadow:
+0 8px 20px rgba(0,0,0,0.05);
+transition:0.25s;
+}
+
+.affiliation-tag:hover{
+transform:translateY(-2px);
+background:rgba(255,255,255,0.55);
+box-shadow:
+0 12px 25px rgba(0,0,0,0.08);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+{#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]#}
+{#关系图#}
+{#关系图#}
+<div
+style="
+margin-top:40px;
+display:flex;
+gap:30px;
+justify-content:center;
+">
+
+<div
+style="
+flex:1;
+padding:35px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(25px);
+border-radius:35px;
+box-shadow:
+0 10px 40px rgba(255,255,255,0.12) inset,
+0 8px 20px rgba(0,0,0,0.03);
+text-align:center;
+">
+
+<h3
+style="
+font-size:34px;
+margin-bottom:25px;
+letter-spacing:2px;
+font-family:'IM Fell English SC', serif;
+color:{{ dark_color }};
+">
+Region
+</h3>
+
+<div class="network-container">
+<div class="network-ring">
+
+<div class="orbit-circle"></div>
+
+<div class="center-node">
+{{ row["character_name"] }}
+</div>
+
+{% for character in related_characters[:8] %}
+<a
+href="/genshin/{{ character }}"
+class="orbit-link node-{{ loop.index }}">
+<div class="orbit-node">
+{{ character }}
+</div>
+</a>
+{% endfor %}
+
+</div>
+</div>
+
+</div>
+
+<div
+style="
+flex:1;
+padding:35px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(25px);
+border-radius:35px;
+box-shadow:
+0 10px 40px rgba(255,255,255,0.12) inset,
+0 8px 20px rgba(0,0,0,0.03);
+text-align:center;
+">
+
+<h3
+style="
+font-size:34px;
+margin-bottom:25px;
+letter-spacing:2px;
+font-family:'IM Fell English SC', serif;
+color:{{ dark_color }};
+">
+Element
+</h3>
+
+<div class="network-container">
+<div class="network-ring">
+
+<div class="orbit-circle"></div>
+
+<div class="center-node">
+{{ row["character_name"] }}
+</div>
+
+{% for character in element_characters[:8] %}
+<a
+href="/genshin/{{ character }}"
+class="orbit-link node-{{ loop.index }}">
+<div class="orbit-node">
+{{ character }}
+</div>
+</a>
+{% endfor %}
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+<style>
+.network-container{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.network-ring{
+position:relative;
+width:450px;
+height:400px;
+}
+
+.center-node{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:115px;
+height:115px;
+border-radius:50%;
+background:rgba(255,255,255,0.78);
+backdrop-filter:blur(25px);
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:'IM Fell English SC', serif;
+font-size:30px;
+font-weight:bold;
+z-index:10;
+box-shadow:
+0 15px 40px rgba(255,255,255,0.25),
+0 12px 35px rgba(0,0,0,0.06);
+animation:pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+box-shadow:
+0 0 20px rgba(255,255,255,0.25),
+0 12px 35px rgba(0,0,0,0.06);
+}
+50%{
+box-shadow:
+0 0 45px rgba(255,255,255,0.55),
+0 12px 35px rgba(0,0,0,0.06);
+}
+}
+
+.orbit-link{
+position:absolute;
+transform:translate(-50%,-50%);
+text-decoration:none;
+color:inherit;
+z-index:5;
+}
+
+.orbit-node{
+padding:12px 22px;
+background:rgba(255,255,255,0.32);
+backdrop-filter:blur(18px);
+border-radius:999px;
+font-family:'Forum', serif;
+font-size:22px;
+white-space:nowrap;
+box-shadow:
+0 6px 18px rgba(0,0,0,0.04);
+transition:0.3s;
+}
+
+.orbit-node:hover{
+transform:scale(1.08);
+background:rgba(255,255,255,0.55);
+box-shadow:
+0 12px 24px rgba(0,0,0,0.06);
+}
+
+.node-1{
+top:12%;
+left:50%;
+animation:float1 3.5s ease-in-out infinite;
+}
+
+.node-2{
+top:30%;
+left:20%;
+animation:float2 4.1s ease-in-out infinite;
+}
+
+.node-3{
+top:30%;
+left:80%;
+animation:float3 3.8s ease-in-out infinite;
+}
+
+.node-4{
+top:50%;
+left:12%;
+animation:float4 4.6s ease-in-out infinite;
+}
+
+.node-5{
+top:50%;
+left:88%;
+animation:float5 3.7s ease-in-out infinite;
+}
+
+.node-6{
+top:72%;
+left:25%;
+animation:float6 4.4s ease-in-out infinite;
+}
+
+.node-7{
+top:84%;
+left:50%;
+animation:float7 3.9s ease-in-out infinite;
+}
+
+.node-8{
+top:72%;
+left:75%;
+animation:float8 4.2s ease-in-out infinite;
+}
+
+@keyframes float1{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(-10px);
+}
+}
+
+@keyframes float2{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(8px);
+}
+}
+
+@keyframes float3{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(-12px);
+}
+}
+
+@keyframes float4{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(10px);
+}
+}
+
+@keyframes float5{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(-9px);
+}
+}
+
+@keyframes float6{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(12px);
+}
+}
+
+@keyframes float7{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(-8px);
+}
+}
+
+@keyframes float8{
+0%,100%{
+transform:translate(-50%,-50%) translateY(0);
+}
+50%{
+transform:translate(-50%,-50%) translateY(10px);
+}
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+<div class="bottom-layout">
+
+{#图表[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]][[[[[[[[[[[[[[[[[[#}
+<div class="analytics-section">
+
+<h2>
+Character Analytics
+</h2>
+
+<div class="chart-card horizontal-chart">
+<div class="chart-title">HP</div>
+<canvas id="hpChart"></canvas>
+</div>
+
+<div class="chart-card horizontal-chart">
+<div class="chart-title">ATK</div>
+<canvas id="atkChart"></canvas>
+</div>
+
+<div class="chart-card horizontal-chart">
+<div class="chart-title">DEF</div>
+<canvas id="defChart"></canvas>
+</div>
+
+</div>
+
+
+<style>
+.analytics-section{
+margin-top:100px;
+padding:20px 40px 60px 40px;
+}
+
+.analytics-section h2{
+font-family:'IM Fell English SC',serif;
+font-size:35px;
+text-align:center;
+margin-bottom:45px;
+color:{{ dark_color }};
+letter-spacing:2px;
+}
+
+.chart-card{
+padding:30px;
+margin-bottom:35px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(20px);
+border-radius:28px;
+box-shadow:
+0 10px 30px rgba(0,0,0,0.04);
+}
+
+.horizontal-chart{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+.chart-title{
+width:70px;
+flex-shrink:0;
+font-family:'IM Fell English SC',serif;
+font-size:28px;
+font-weight:bold;
+color:{{ dark_color }};
+text-align:center;
+}
+
+.chart-card canvas{
+flex:1;
+height:120px !important;
+}
+
+.chart-card canvas{
+height:200px !important;
+}
+
+{#淡入#}
+.chart-card{
+padding:30px;
+margin-bottom:35px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(20px);
+border-radius:28px;
+box-shadow:
+0 10px 30px rgba(0,0,0,0.04);
+
+opacity:0;
+transform:translateY(20px);
+transition:all 0.8s ease;
+}
+
+.chart-card.show{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+
+
+
+
+
+
+
+
+
+{#详细信息[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]][[[[[[[[[[[[[[[[[[#}
+
+<div class="character-extra">
+<h2>Character Profile</h2>
+<div class="profile-grid">
+
+<div class="profile-item">
+<label>Release Date</label>
+<span>{{ row["release_date"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Birthday</label>
+<span>{{ row["birthday"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Limited</label>
+<span>{{ row["limited"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Special Dish</label>
+<span>{{ row["special_dish"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Ascension Specialty</label>
+<span>{{ row["ascension_specialty"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Boss Material</label>
+<span>{{ row["ascension_boss_material"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Talent Book</label>
+<span>{{ row["talent_book_9-10"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Weekly Boss</label>
+<span>{{ row["talent_weekly"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Ascension Stat</label>
+<span>{{ row["ascension_special_stat"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Ascension Gem</label>
+<span>{{ row["ascension_gem_0-1"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Ascension Stat</label>
+<span>{{ row["ascension_special_stat"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Bonus Stat (Lv.90)</label>
+<span>{{ row["special_6"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Max HP</label>
+<span>{{ row["hp_90_90"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Max ATK</label>
+<span>{{ row["atk_90_90"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>Max DEF</label>
+<span>{{ row["def_90_90"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>CN Voice</label>
+<span>{{ row["voice_cn"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>JP Voice</label>
+<span>{{ row["voice_jp"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>EN Voice</label>
+<span>{{ row["voice_en"] }}</span>
+</div>
+
+<div class="profile-item">
+<label>KR Voice</label>
+<span>{{ row["voice_kr"] }}</span>
+</div>
+</div>
+
+
+<style>
+.character-extra{
+width:420px;
+margin-left:auto;
+padding:35px;
+}
+
+.character-extra h2{
+font-family:'IM Fell English SC',serif;
+font-size:34px;
+margin-bottom:30px;
+color:{{ dark_color }};
+text-align:left;
+}
+
+.profile-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-column-gap:40px;
-">
-{% for key, value in row.items() %}
-    <p
-    style="
-    margin:8px 0;
-    font-size:20px;
-    line-height:1.3;
-    text-shadow:
-    0.3px 0.3px 0px rgba(0,0,0,0.15);
-    ">
-    {{ key.replace("_"," ").title() }}: {{ value }}
-    </p>
-{% endfor %}
-</div>
-</div>
-</div>
+gap:22px 24px;
+}
+
+.profile-item{
+padding-bottom:12px;
+border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.profile-item label{
+display:block;
+font-size:11px;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.5;
+margin-bottom:6px;
+}
+
+.profile-item span{
+font-size:22px;
+line-height:1.4;
+font-family:'Forum',serif;
+}
+
+.bottom-layout{
+display:flex;
+gap:50px;
+align-items:flex-start;
+margin-top:80px;
+}
+
+.analytics-section{
+flex:1.2;
+margin-top:0;
+padding:0;
+max-width:700px;
+}
+
+.character-extra{
+flex:1;
+width:auto;
+margin-top:0;
+margin-left:0;
+padding:0;
+}
+</style>
+
+
+
+
+
 </body>
+
+
+
+<script>
+
+const levels=['20','40','50','60','70','80','90'];
+
+function createChart(
+    canvasId,
+    label,
+    data,
+    avgData
+){
+
+new Chart(
+document.getElementById(canvasId),
+{
+
+type:'line',
+
+data:{
+
+labels:levels,
+
+datasets:[
+
+{
+label:label,
+
+data:data,
+
+borderColor:'{{ dark_color }}',
+backgroundColor:'{{ dark_color }}',
+
+borderWidth:4,
+pointRadius:5,
+pointHoverRadius:7,
+
+tension:0.4,
+
+fill:false
+},
+
+{
+label:'Average {{ row["star_rarity"] }}★',
+
+data:avgData,
+
+borderColor:'rgba(120,120,120,0.6)',
+
+borderDash:[4, 4],
+
+borderWidth:3,
+
+pointRadius:0,
+
+tension:0.4,
+
+fill:false
+}
+
+]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+legend:{
+display:true
+}
+},
+
+animation:{
+duration:1800,
+easing:'easeOutCubic'
+},
+
+animations:{
+x:{
+duration:1800
+},
+y:{
+duration:0
+}
+},
+
+scales:{
+
+x:{
+grid:{
+display:true
+}
+},
+
+y:{
+beginAtZero:false
+}
+
+}
+
+}
+
+}
+
+);
+
+}
+
+let loaded = false;
+
+const analytics =
+document.querySelector('.analytics-section');
+
+const cards =
+document.querySelectorAll('.chart-card');
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+if(
+entries[0].isIntersecting
+&&
+!loaded
+){
+
+loaded = true;
+
+cards.forEach((card,index)=>{
+
+setTimeout(()=>{
+
+card.classList.add('show');
+
+},index*150);
+
+});
+
+createChart(
+'hpChart',
+'HP',
+{{ hp_growth|tojson }},
+{{ avg_hp_growth|tojson }}
+);
+
+setTimeout(()=>{
+
+createChart(
+'atkChart',
+'ATK',
+{{ atk_growth|tojson }},
+{{ avg_atk_growth|tojson }}
+);
+
+},200);
+
+setTimeout(()=>{
+
+createChart(
+'defChart',
+'DEF',
+{{ def_growth|tojson }},
+{{ avg_def_growth|tojson }}
+);
+
+},400);
+
+}
+
+},{
+threshold:0.35
+});
+
+observer.observe(analytics);
+
+</script>
